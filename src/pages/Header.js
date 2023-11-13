@@ -3,10 +3,10 @@ import styled from 'styled-components'
 
 const Logo = styled.div`
     cursor: pointer;
-    margin: 0 auto;
+    padding: 1%;
     text-align: center;
     img{
-        width: 18%;
+        width: 10%;
         margin-bottom: 23px;
     }
 `
@@ -18,7 +18,7 @@ const Title = styled.div`
     display: flex;
     flex-direction: column;
     position: relative;
-    bottom: 80px;
+    bottom: 30px;
 `
 
 const BackGroundImg = styled.div`
@@ -121,7 +121,7 @@ const EmptyButton = styled.div`
 function Header() {
   return (
     <>
-    <Logo><img src="/images/logoimage.png" alt="" /></Logo>   
+    <Logo><img src="/images/standardlogo.png" alt=""/></Logo>   
     <Title>
    <BackGroundImg></BackGroundImg>
    <Emptydiv></Emptydiv>
