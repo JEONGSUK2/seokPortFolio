@@ -5,68 +5,112 @@ import React from 'react'
 import styled from 'styled-components'
 
 const FooterWrap = styled.div`
-  background-color: #353535;
+  background-color: #121212;
   width: 100%;
   color: #fff;
+  position: absolute;
+  
+  bottom: 0;
+  @media screen and (max-width:768px) {
+    width: 100%;
+    position: absolute;
+  }
 `
 
 const FooterBox = styled.div`
   max-width: 1280px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
+
   `
   const Contact = styled.div`
     display: flex;
-    flex-direction: column;
-    flex-basis: 70%;
+    justify-content: space-between;
+    width: 50%;
+  @media screen and (max-width: 768px) {
+      width: 100%;
+  }
   `
-const IconDiv = styled.div`
-    padding: 10px;
-   
-  svg{
-    font-size: 45px;
-    margin-left: 15px;
-  }
-  img{
-    width: 20%;
-  }
-`
 
 const Email = styled.div`
-  font-size: 0.9rem;
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
-  svg{
-    font-size: 1.5rem;
-    flex-basis: 2%;
+  flex-basis: 90%;
+ svg{
+  margin-right: 5px;
+  font-size: 25px;
+ }
+ @media screen and (max-width:768px){
+    svg{
+      font-size: 20px;
+    }
+ }
+  p{
+    font-size: 0.95rem;
   }
-  
+  @media screen and (max-width:768px) {
+      p{
+        font-size: 0.75rem;
+      }
+  }
 `
 const CopyLight = styled.div`
-   font-size: 0.9rem;
    display: flex;
    align-items: center;
- 
-   svg{
-    font-size: 0.5;
-    flex-basis: 1%;
+   span{
+    display: none;
+   }
+  p{
+    font-size: 0.85rem;
+  }
+  flex-basis: 70%;
+  @media screen and (max-width:768px) {
+    p{
+        font-size: 0.85rem;
+          display: none;  
+      }
+      span{
+        font-size: 0.85rem;
+        display: block;
+      }
   }
 `
-
-
+const IconDiv = styled.div`
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  svg{
+    font-size: 40px;
+    margin-right: 10px;
+  }
+  img{
+    width: 16%;
+    margin-top: 7px;
+    
+  }
+  @media screen and (max-width: 768px) {
+      width: 25%;
+      img{
+        width: 45%;
+      }
+  }
+`
 function Footer() {
   return (
     <FooterWrap>
       <FooterBox>
         <Contact>
-        <Email><FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon><p>EMAIL & dlwjdtjr3088@naver.com</p> </Email>
-        <CopyLight><FontAwesomeIcon icon={faCopyright}></FontAwesomeIcon><p>Copylight 2023. jeongseok all rights reserved</p>
+        <Email><FontAwesomeIcon icon={faEnvelope}/><p>EMAIL : dlwjdtjr3088@naver.com</p> </Email>
+        <CopyLight><p>Copylight 2023. standard all rights reserved</p>
+            <span>©2023. standard all right reserved</span>
         </CopyLight>
         </Contact>
         <IconDiv><FontAwesomeIcon icon={faGithub} />
         <img src="/images/kakao.png" alt="" />
+      
         </IconDiv>
       </FooterBox>
     </FooterWrap>

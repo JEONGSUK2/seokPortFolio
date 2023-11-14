@@ -115,14 +115,13 @@ const WhatDesc = styled.div`
 
 function About() {
     const theme = useSelector(state => state.dark.mode)
-    const dispatch = useDispatch()
     
   return (
     <>
    
     <AboutHeader $isdark={theme}>
         <AboutHeaderWrap>
-    <PageLink/>
+   
     <LogoLink/>
         <AboutWrap>
            <Profile>

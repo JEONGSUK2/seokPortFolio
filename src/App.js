@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Header from "./pages/Header";
 import GlobalStyle from "./components/GlobalStyle";
 import About from "./pages/About";
-import Project from "./pages/Project";
 import Skill from "./pages/Skill";
 import { Provider, useDispatch, useSelector } from "react-redux";
 import { ThemeProvider } from "styled-components";
@@ -12,6 +11,7 @@ import store from "./store";
 import Aside from "./components/Aside";
 import PageLink from "./components/PageLink";
 import Footer from "./components/Footer";
+import Contact from "./pages/Contact";
 
 
 function App() {
@@ -82,15 +82,15 @@ function Dark(){
     <ThemeProvider theme={theme}> 
     <Aside />
     <GlobalStyle/>
-    
+    <PageLink/>
     <Routes>
       <Route path="/" element={<Header/>}></Route>
-      <Route path="about" element={<About/>}></Route>
-      <Route path="skill" element={<Skill/>}></Route>
-      <Route path="project" element={<Project/>}></Route>
+      <Route path="/about" element={<About/>}></Route>
+      <Route path="/skill" element={<Skill/>}></Route>
+      <Route path="/contact" element={<Contact/>}></Route>
     </Routes>
-    </ThemeProvider>
     <Footer/>
+    </ThemeProvider>
     </>
   );
 }

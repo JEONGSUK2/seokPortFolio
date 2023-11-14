@@ -4,8 +4,13 @@ import styled from 'styled-components'
 
 const Logo = styled.div`
     img{
-        width: 150px;
-        padding: 1%;
+      width: 150px;
+      padding: 1%;
+    }
+    @media screen and (max-width: 768px) {
+       img{
+        width: 120px;
+       }
     }
 `
 

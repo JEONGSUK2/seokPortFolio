@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 
@@ -41,7 +42,7 @@ function PageLink() {
           <BtnDiv>
             <BtnDivWrap>
                 <ul>
-                    <li>about</li>
+                    <Link to="/about"><li>about</li></Link>
                     <li>skill</li>
                     <li>project</li>
                     <li>contact</li>
