@@ -10,9 +10,12 @@ const BtnDiv = styled.div`
 const BtnDivWrap = styled.div`
     ul{
         position: fixed;
+        top: 200px;
         left: -20px;
         z-index: 200;
         font-weight: 700;
+        display: flex;
+        flex-direction: column;
         
         li{
             border-radius: 10px;
@@ -38,10 +41,10 @@ function PageLink() {
           <BtnDiv>
             <BtnDivWrap>
                 <ul>
-                    <li>HOME</li>
-                    <li>ABOUT</li>
-                    <li>SKILL</li>
-                    <li>PORJECT</li>
+                    <li>about</li>
+                    <li>skill</li>
+                    <li>project</li>
+                    <li>contact</li>
                 </ul>
             </BtnDivWrap>
           </BtnDiv>

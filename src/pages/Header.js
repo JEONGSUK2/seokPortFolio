@@ -1,14 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-
+import LogoLink from '../components/LogoLink'
 const Logo = styled.div`
-    cursor: pointer;
-    padding: 1%;
-    text-align: center;
-    img{
-        width: 10%;
-        margin-bottom: 23px;
-    }
+    max-width: 1280px;
+    margin: 0 auto;
 `
 
 const Title = styled.div`
@@ -18,7 +13,7 @@ const Title = styled.div`
     display: flex;
     flex-direction: column;
     position: relative;
-    bottom: 30px;
+    bottom: 10px;
 `
 
 const BackGroundImg = styled.div`
@@ -26,7 +21,7 @@ const BackGroundImg = styled.div`
     background-position: center;
     background-size: cover;
     width: 50%;
-    height: 700px;
+    height: 675px;
     margin: 0 auto;
     opacity: 0.9;
     filter: saturate(120%);
@@ -121,7 +116,7 @@ const EmptyButton = styled.div`
 function Header() {
   return (
     <>
-    <Logo><img src="/images/standardlogo.png" alt=""/></Logo>   
+  <Logo> <LogoLink/></Logo>
     <Title>
    <BackGroundImg></BackGroundImg>
    <Emptydiv></Emptydiv>

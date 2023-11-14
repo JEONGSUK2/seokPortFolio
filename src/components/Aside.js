@@ -8,7 +8,7 @@ import { styled } from 'styled-components'
     const ASide = styled.div`
     position: fixed;
     right: 20px;
-    bottom: 20px;
+    bottom: 150px;
     border: 1px solid #ddd;
     background-color: ${({$isdark})=> ($isdark === 'light' ? '#fff' : 'black')};    
     border-radius: 5px;

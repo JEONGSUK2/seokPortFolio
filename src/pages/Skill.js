@@ -1,34 +1,33 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import PageLink from '../components/PageLink';
+import LogoLink from '../components/LogoLink';
 
 const SkillPage = styled.div`
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
 `
 
 const SkillPageWrap = styled.div`
-  width: 100%;
-  margin: 0 auto;
-  height: 100%;
-  padding: 2%;
+ width: 100%;
+  /* height: 100%; */
 `
 
 const Title = styled.div`
-  width: 85%;
+  max-width: 1380px;
+  padding: 2%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  img{
-    width: 9%;
-  }
- 
+
   ul{
     display: flex;
     width: 100%;
     align-items: center;
-    flex-basis: 27%;
+    
+    flex-basis: 35%;
     li{
       border-radius: 5px;
       margin-right: 10px;
@@ -45,7 +44,9 @@ const TitleLine = styled.div`
     content: "";
     position: absolute;
     top: 130px;
-    width: 95%;
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     height: 2px;  
     background-color: #353535; 
   }
@@ -56,12 +57,15 @@ const Contents = styled.div`
   width: 100%;
   height: 100%;
   padding: 0 2%;
+
+  
 `
 
 const ContentsWrap = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+  
 `
 
 const SkillImg = styled.div`
@@ -74,7 +78,6 @@ const SkillImg = styled.div`
     text-align: center;
     width: 70%;
     margin-bottom: 20px;
-    
   }
   p{
     color: red;
@@ -87,7 +90,8 @@ const SkillImg = styled.div`
   width: 70%;
   display: flex;
   flex-wrap: wrap; 
-  
+  align-items: center;
+  margin-left: 25px;
   li{
     padding: 2%;
     cursor: pointer;
@@ -105,12 +109,13 @@ const SkillImg = styled.div`
   }
  }
   img{
-    margin-top: 50px;
-    margin-bottom: 10px;
-    width: 70%;
+    margin-left: 45px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    width: 50%;
     object-fit: fill;
+    filter: grayscale(50%);
     opacity: 0.9;
-    filter: grayscale(40%);
   }
 `
 
@@ -118,12 +123,11 @@ const OverFlowWrap = styled.div`
   width: 100%;
   height: 100%;
   flex-basis: 55%;
-  margin-left: 20px;
 `
 
 const CloneListBox = styled.ul`
       overflow-y: auto; 
-      height: 650px;
+      height: 600px;
       display: flex;
       flex-wrap: wrap; 
       gap: 10px;
@@ -136,7 +140,7 @@ const CloneListBox = styled.ul`
     height: 50%;
     display: flex;
     flex-direction: column;
-   
+    
     justify-content: center;
     padding: 10px;
     box-shadow: 5px 5px 0px 0px gray;
@@ -149,16 +153,12 @@ const CloneListBox = styled.ul`
       }
     }
 `
-/* 
- &::-webkit-scrollbar {
-    display: none; }/* 크롬, 사파리, 오페라, 엣지 */
-
+//  filter: brightness(50%);
 
 function Skill() {
  
   const [selectedTag, setSelectedTag] = useState(null);
   const [opc, setOpc] = useState(false)
-
 
   const Array = [
     {
@@ -223,7 +223,6 @@ function Skill() {
     },
   ]
 
-
   const HashTag = [
     '#SCSS', '#TAILWIND_CSS', '#STYLEED_COMPONENT', 
     '#REACT', '#NEXT_JS', '#TYPESCRIPT', '#REDUX',
@@ -248,13 +247,12 @@ function Skill() {
   const FilterType =["전체", "redesign", "clone", "project"]
   const filteredItems = (total === "전체") ? Array : Array.filter(item => FilterBtn.indexOf(total) === FilterType.indexOf(item.type));
 
-
   return (
     <>
       <SkillPage>
         <SkillPageWrap>
           <Title>
-          <img src="/images/standardlogo.png" alt="" />
+          <LogoLink/>
             <ul>
               {
                 FilterBtn.map((e,i)=>{
@@ -263,14 +261,14 @@ function Skill() {
                   )                               
                 })
               }
-            </ul>
+          </ul>
           </Title>
+          <PageLink/>
           <TitleLine></TitleLine>
         </SkillPageWrap>
         <Contents>
           <ContentsWrap>
             <SkillImg>
-            
               {/* 해쉬태그 클릭시 해당 설명 띄우기 */}
               <img src="/images/skillprofile.png" alt="/images/skillprofile.png"/>      
               <div>"Click on the Tag!"</div>   
@@ -287,7 +285,6 @@ function Skill() {
             </SkillImg>
         <OverFlowWrap>
         <CloneListBox> {/* ul  */}
-       
       {
       filteredItems.map((e, i) => (
         <li key={i}>
@@ -306,4 +303,3 @@ function Skill() {
   )
 }
 export default Skill
-

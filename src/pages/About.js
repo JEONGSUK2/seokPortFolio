@@ -1,14 +1,8 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useDispatch, useSelector } from 'react-redux'
+import LogoLink from '../components/LogoLink'
 import PageLink from '../components/PageLink'
-
-const Logo = styled.div`
-    img{
-        width: 10%;
-        padding: 2%;
-    }
-`
 
 const AboutHeader = styled.div`
     width: 100%;
@@ -16,8 +10,13 @@ const AboutHeader = styled.div`
     background-color: ${({$isdark})=> ($isdark === 'light' ? '#fff' : '#353535')}; 
     color: ${({$isdark})=> ($isdark === 'light' ? 'black' : '#fff')};
 `
-const AboutWrap = styled.div`
+const AboutHeaderWrap = styled.div`
     max-width: 1280px;
+    margin: 0 auto;
+`
+
+const AboutWrap = styled.div`
+    width: 100%;
     margin: 0 auto;
 `
 const Profile = styled.div`
@@ -74,7 +73,7 @@ const BackgroundPeopleImg = styled.div`
     background-image: url('/images/peoples.png');
     background-position: center;
     background-size: cover;
-    width: 95%;
+    width: 100%;
     height: 660px;
     filter: grayscale(100%);
     
@@ -117,16 +116,14 @@ const WhatDesc = styled.div`
 function About() {
     const theme = useSelector(state => state.dark.mode)
     const dispatch = useDispatch()
-  
-
+    
   return (
     <>
    
     <AboutHeader $isdark={theme}>
-    <Logo>
-    <img src="/images/standardlogo.png" alt=""/>
-    </Logo>
+        <AboutHeaderWrap>
     <PageLink/>
+    <LogoLink/>
         <AboutWrap>
            <Profile>
             <p>안녕하세요 사람들 위한 프론트엔드 개발자가 되고자하는 이정석입니다</p>
@@ -149,11 +146,12 @@ function About() {
                 <WhatTitle>WHAT...</WhatTitle>
                 <WhatDesc>
                     <p><span>사용자 중심</span>의 웹사이트를 만들며, 기술을 통해 현실 세계에 긍정적인 영향을 미치는 개발자가 되고자 결심하게 되었습니다.</p>
-                    <p style={{marginTop: "20px"}}>다양한 클론 코딩 사이트를 제작하면서 사용자의 편리성에 대해 공부하고, 코드를 어떻게 활용하여 소비자에게 더욱 편리한 데이터를 전달 할지에 대해 알게 되었습니다.</p>
-                    <p style={{marginTop: "20px"}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi excepturi modi distinctio quae fuga quam nisi rerum veritatis? Voluptatum aliquid officia repudiandae, eaque esse animi non nesciunt impedit nisi dolor?</p>
+                    <p>다양한 클론 코딩 사이트를 제작하면서 사용자의 편리성에 대해 공부하고, 코드를 어떻게 활용하여 소비자에게 더욱 편리한 데이터를 전달 할지에 대해 알게 되었습니다.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi excepturi modi distinctio quae fuga quam nisi rerum veritatis? Voluptatum aliquid officia repudiandae, eaque esse animi non nesciunt impedit nisi dolor?</p>
                     
                 </WhatDesc>
             </What>
+            </AboutHeaderWrap>
         </AboutHeader>
     </>
   )

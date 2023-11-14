@@ -11,6 +11,7 @@ import { useState } from "react";
 import store from "./store";
 import Aside from "./components/Aside";
 import PageLink from "./components/PageLink";
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -89,6 +90,7 @@ function Dark(){
       <Route path="project" element={<Project/>}></Route>
     </Routes>
     </ThemeProvider>
+    <Footer/>
     </>
   );
 }
