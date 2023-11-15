@@ -7,8 +7,12 @@ const BtnDiv = styled.div`
     width: 100%;
     height: 100%;
     position: relative;
+   
 `
 const BtnDivWrap = styled.div`
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
     ul{
         position: fixed;
         top: 200px;
@@ -17,6 +21,7 @@ const BtnDivWrap = styled.div`
         font-weight: 700;
         display: flex;
         flex-direction: column;
+        
         
         li{
             border-radius: 10px;
@@ -34,8 +39,38 @@ const BtnDivWrap = styled.div`
     }
 `
 
+
+
+const M_BtnDiv = styled.div`
+    background-color: black;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 101;
+`
+const Hamburger = styled.div`
+    ul{
+        cursor: pointer;
+        li{
+            width: 40px;
+            height: 5px;
+            background-color: #000;
+            border-radius: 5px;
+            margin: 3px; 
+        }
+        &:on{
+
+        }
+    }
+`
+
+
+const M_BtnDesc = styled.div`
+    
+`
+
 function PageLink() {
-      const [currentPage, setCurrentPage] = useState('');
+      const [isActive, setIsActive] = useState(false)
     
       return (
           <>
@@ -48,7 +83,23 @@ function PageLink() {
                 </ul>
             </BtnDivWrap>
           </BtnDiv>
-          
+          <M_BtnDiv>
+            <Hamburger onClick={()=>{}}>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </Hamburger>
+            <M_BtnDesc>
+                <ul>
+                    <Link to="/about"><li>about</li></Link>
+                    <Link to="/skill"><li>skill&project</li></Link>
+                    <Link to="/comment"><li>comment</li></Link>    
+                </ul>
+            </M_BtnDesc>
+          </M_BtnDiv>
+
           </>
         )
       }

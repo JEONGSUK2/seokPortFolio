@@ -10,8 +10,9 @@ const SkillPage = styled.div`
   width: 100%;
   background-color: ${({$isdark})=> ($isdark === 'light' ? '#fff' : '#353535')}; 
   color: ${({$isdark})=> ($isdark === 'light' ? 'black' : '#fff')};
-  margin-bottom: 102px;
+  margin-bottom: 10px;
 `
+
 
 const SkillPageWrap = styled.div`
  width: 100%;
@@ -75,7 +76,9 @@ const TitleLine = styled.div`
 const Contents = styled.div`
   width: 100%;
   height: 100%;
-  padding: 0 2%;
+  @media screen and (max-width: 768px) {
+      padding: 1%;
+  }
 `
 
 const ContentsWrap = styled.div`
@@ -84,6 +87,9 @@ const ContentsWrap = styled.div`
   justify-content: center;
   @media screen and (max-width: 768px) {
       flex-direction: column;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
     }
 `
 
@@ -115,10 +121,12 @@ const SkillImg = styled.div`
     align-items: center;
     margin-left: 25px;
     
-    
     @media screen and (max-width: 768px) {
+      flex-direction: row;
       margin: 0 auto;
       margin-bottom: 10px;
+      align-items: center;
+      justify-content: center;
     }
     
     li{
@@ -161,6 +169,7 @@ const HashInfo = styled.p`
         margin: 0 auto;
         display: block;
         margin-top: 10px;
+        text-align: center;
     }
 `
 
