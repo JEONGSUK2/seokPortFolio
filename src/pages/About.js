@@ -5,14 +5,12 @@ import LogoLink from '../components/LogoLink'
 import PageLink from '../components/PageLink'
 import Footer from '../components/Footer'
 
-
-
-
 const AboutHeader = styled.div`
     width: 100%;
     margin: 0 auto;
     background-color: ${({$isdark})=> ($isdark === 'light' ? '#fff' : '#353535')}; 
     color: ${({$isdark})=> ($isdark === 'light' ? 'black' : '#fff')};
+    margin-bottom: 100px;
 `
 const AboutHeaderWrap = styled.div`
     max-width: 1280px;
@@ -115,12 +113,9 @@ const WhatDesc = styled.div`
         font-size: 18px;
         letter-spacing :-0.5px;
       }
+     
 `
-const FooterWrap = styled.div`
-  position: relative;
-  top: 96px;
-  width: 100%;
-`
+
 function About() {
     const theme = useSelector(state => state.dark.mode)
     
@@ -161,7 +156,7 @@ function About() {
             </What>
             </AboutHeaderWrap>
         </AboutHeader>
-        <FooterWrap><Footer/></FooterWrap>
+        
     </>
   )
 }

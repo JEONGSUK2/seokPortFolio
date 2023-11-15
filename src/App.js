@@ -11,7 +11,7 @@ import store from "./store";
 import Aside from "./components/Aside";
 import PageLink from "./components/PageLink";
 import Footer from "./components/Footer";
-import Contact from "./pages/Contact";
+import Comment from "./pages/Comment";
 
 
 function App() {
@@ -87,9 +87,9 @@ function Dark(){
       <Route path="/" element={<Header/>}></Route>
       <Route path="/about" element={<About/>}></Route>
       <Route path="/skill" element={<Skill/>}></Route>
-      <Route path="/contact" element={<Contact/>}></Route>
+      <Route path="/comment" element={<Comment/>}></Route>
     </Routes>
-  
+    <Footer/>
     </ThemeProvider>
     </>
   );

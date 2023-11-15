@@ -10,6 +10,7 @@ const SkillPage = styled.div`
   width: 100%;
   background-color: ${({$isdark})=> ($isdark === 'light' ? '#fff' : '#353535')}; 
   color: ${({$isdark})=> ($isdark === 'light' ? 'black' : '#fff')};
+  margin-bottom: 102px;
 `
 
 const SkillPageWrap = styled.div`
@@ -118,7 +119,6 @@ const SkillImg = styled.div`
     @media screen and (max-width: 768px) {
       margin: 0 auto;
       margin-bottom: 10px;
-    
     }
     
     li{
@@ -187,7 +187,6 @@ const Mbtn = styled.div`
         }
     }
 `
-
 
 const CloneListBox = styled.ul`
       overflow-y: auto; 
@@ -396,7 +395,7 @@ function Skill() {
           </ContentsWrap>
         </Contents>
       </SkillPage>
-        <FooterWrap><Footer/></FooterWrap>
+        
     </>
   )
 }

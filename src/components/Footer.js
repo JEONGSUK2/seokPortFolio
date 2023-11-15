@@ -9,11 +9,15 @@ const FooterWrap = styled.div`
   width: 100%;
   color: #fff;
   position: absolute;
-  
-  bottom: 0;
+  height: auto;
+  min-height: 10%;
+  padding-bottom: 0px;
+
+
   @media screen and (max-width:768px) {
     width: 100%;
-    position: absolute;
+    min-height: 12%;
+    
   }
 `
 
@@ -23,7 +27,12 @@ const FooterBox = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media screen and (max-width:768px) {
+    width: 100%;
+    min-height: 12%;
 
+  }
+  
   `
   const Contact = styled.div`
     display: flex;

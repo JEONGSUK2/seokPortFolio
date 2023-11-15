@@ -43,9 +43,8 @@ function PageLink() {
             <BtnDivWrap>
                 <ul>
                     <Link to="/about"><li>about</li></Link>
-                    <li>skill</li>
-                    <li>project</li>
-                    <li>contact</li>
+                    <Link to="/skill"><li>skill&project</li></Link>
+                    <Link to="/comment"><li>comment</li></Link>    
                 </ul>
             </BtnDivWrap>
           </BtnDiv>

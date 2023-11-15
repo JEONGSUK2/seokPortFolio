@@ -9,13 +9,9 @@ import Footer from '../components/Footer'
 
 const HeaderWrap = styled.div`
     width: 100%;
+    margin: 0 auto;
     background-color: ${({$isdark})=> ($isdark === 'light' ? '#fff' : '#353535')}; 
     color: ${({$isdark})=> ($isdark === 'light' ? 'black' : '#fff')};
-`
-
-const Logo = styled.div`
-    max-width: 1280px;
-    margin: 0 auto;
 `
 
 const Title = styled.div`
@@ -25,7 +21,14 @@ const Title = styled.div`
     display: flex;
     flex-direction: column;
     position: relative;
-    bottom: 90px;
+    bottom: 0px;
+    
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        margin: 0 auto;
+        justify-content: center;
+    
+    }
 `
 
 const BackGroundImg = styled.div`
@@ -33,7 +36,7 @@ const BackGroundImg = styled.div`
     background-position: center;
     background-size: cover;
     width: 50%;
-    height: 670px;
+    height: 643px;
     margin: 0 auto;
     opacity: 0.9;
     filter: saturate(120%);
@@ -156,37 +159,24 @@ const ContactButton = styled.button`
     @media screen and (max-width: 768px) {
         right: 10%;
     }
-`    
-const FooterWrap = styled.div`
-  width: 100%; 
-  position: relative;
-  top: 47px;
-  left: 0;
-  right: 0;
-  @media screen and (max-width: 768px) {
-    position: relative;
-    top: 103px;
-    width: 100%;
-  } 
-`
+`   
 function Header() {
     const theme = useSelector(state => state.dark.mode)
 
   return (
     <>
-      
     <HeaderWrap $isdark={theme}>
-    <Link to ="/"><LogoLink/></Link>
     <Title>
+    <LogoLink/>
    <BackGroundImg></BackGroundImg>
    <Emptydiv $isdark={theme}></Emptydiv>
    <Link to="/about"><AboutButton><span>about</span></AboutButton></Link>
    <Link to="/skill"><SkillButton><span>skill</span></SkillButton></Link>
-   <Link to="/contact"><ContactButton><span>contact</span></ContactButton></Link>
-   <Link to="/contact"><ComentButton><span>comment</span></ComentButton></Link>
+   <Link to="/skill"><ContactButton><span>project</span></ContactButton></Link>
+   <Link to="/comment"><ComentButton><span>comment</span></ComentButton></Link>
    </Title>
    </HeaderWrap>
-   <FooterWrap><Footer/></FooterWrap>
+
     </>
   )
 }
