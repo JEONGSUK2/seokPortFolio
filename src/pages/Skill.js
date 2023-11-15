@@ -4,6 +4,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import PageLink from '../components/PageLink';
 import LogoLink from '../components/LogoLink';
 import { useSelector } from 'react-redux'
+import Footer from '../components/Footer';
 
 const SkillPage = styled.div`
   width: 100%;
@@ -227,6 +228,12 @@ const CloneListBox = styled.ul`
 `
 //  filter: brightness(50%);
 
+const FooterWrap = styled.div`
+  position: relative;
+  top: 96px;
+`
+
+
 function Skill() {
  
   const [selectedTag, setSelectedTag] = useState(null);
@@ -322,6 +329,7 @@ function Skill() {
  
   return (
     <>
+    <PageLink/>
       <SkillPage $isdark={theme}>
         <SkillPageWrap>
           <Title>
@@ -388,6 +396,7 @@ function Skill() {
           </ContentsWrap>
         </Contents>
       </SkillPage>
+        <FooterWrap><Footer/></FooterWrap>
     </>
   )
 }

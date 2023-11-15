@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import LogoLink from '../components/LogoLink'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, NavLink } from 'react-router-dom'
+import Footer from '../components/Footer'
 
 
 
@@ -45,7 +46,7 @@ const BackGroundImg = styled.div`
 `
 const Emptydiv = styled.div`
     width: 100%;
-    padding: 60px;
+    padding: 55.5px;
     background-color: ${({$isdark})=> ($isdark === 'light' ? '#fff' : '#333333')}; 
     position: relative;
     bottom: 25px;
@@ -156,7 +157,18 @@ const ContactButton = styled.button`
         right: 10%;
     }
 `    
-
+const FooterWrap = styled.div`
+  width: 100%; 
+  position: relative;
+  top: 47px;
+  left: 0;
+  right: 0;
+  @media screen and (max-width: 768px) {
+    position: relative;
+    top: 103px;
+    width: 100%;
+  } 
+`
 function Header() {
     const theme = useSelector(state => state.dark.mode)
 
@@ -174,6 +186,7 @@ function Header() {
    <Link to="/contact"><ComentButton><span>comment</span></ComentButton></Link>
    </Title>
    </HeaderWrap>
+   <FooterWrap><Footer/></FooterWrap>
     </>
   )
 }

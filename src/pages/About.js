@@ -3,6 +3,10 @@ import styled from 'styled-components'
 import { useDispatch, useSelector } from 'react-redux'
 import LogoLink from '../components/LogoLink'
 import PageLink from '../components/PageLink'
+import Footer from '../components/Footer'
+
+
+
 
 const AboutHeader = styled.div`
     width: 100%;
@@ -112,13 +116,18 @@ const WhatDesc = styled.div`
         letter-spacing :-0.5px;
       }
 `
-
+const FooterWrap = styled.div`
+  position: relative;
+  top: 96px;
+  width: 100%;
+`
 function About() {
     const theme = useSelector(state => state.dark.mode)
     
   return (
     <>
    
+   <PageLink/>
     <AboutHeader $isdark={theme}>
         <AboutHeaderWrap>
    
@@ -152,6 +161,7 @@ function About() {
             </What>
             </AboutHeaderWrap>
         </AboutHeader>
+        <FooterWrap><Footer/></FooterWrap>
     </>
   )
 }

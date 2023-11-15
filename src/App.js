@@ -82,19 +82,17 @@ function Dark(){
     <ThemeProvider theme={theme}> 
     <Aside />
     <GlobalStyle/>
-    <PageLink/>
+    
     <Routes>
       <Route path="/" element={<Header/>}></Route>
       <Route path="/about" element={<About/>}></Route>
       <Route path="/skill" element={<Skill/>}></Route>
       <Route path="/contact" element={<Contact/>}></Route>
     </Routes>
-    <Footer/>
+  
     </ThemeProvider>
     </>
   );
 }
-
-
 
 export default App;
