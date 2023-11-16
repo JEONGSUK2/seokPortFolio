@@ -12,7 +12,7 @@ const FooterWrap = styled.div`
   height: auto;
   min-height: 10%;
   padding-bottom: 0px;
-
+ 
 
   @media screen and (max-width:768px) {
     width: 100%;
@@ -27,19 +27,18 @@ const FooterBox = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  @media screen and (max-width:768px) {
-    width: 100%;
-    min-height: 12%;
+ 
 
-  }
   
   `
   const Contact = styled.div`
     display: flex;
     justify-content: space-between;
     width: 50%;
+    
   @media screen and (max-width: 768px) {
       width: 100%;
+      margin-top: 30px;
   }
   `
 
@@ -47,6 +46,7 @@ const Email = styled.div`
   display: flex;
   align-items: center;
   flex-basis: 90%;
+  
  svg{
   margin-right: 5px;
   font-size: 25px;
@@ -66,6 +66,7 @@ const Email = styled.div`
   }
 `
 const CopyLight = styled.div`
+
    display: flex;
    align-items: center;
    span{

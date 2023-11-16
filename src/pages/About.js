@@ -35,8 +35,8 @@ const Profile = styled.div`
         font-weight: 600;
         margin-right: 5px;
         @media screen and (max-width: 768px) {
-            flex-basis: 35%;
-            font-size: 1.2rem;       
+            flex-basis: 50%;
+            font-size: 1.1rem;       
     }
     }
     img{
@@ -170,7 +170,7 @@ function About() {
     </div>
         <AboutWrap>
            <Profile>
-            <p>안녕하세요 사람들 위한 프론트엔드 개발자가 되고자하는 이정석입니다</p>
+            <p>안녕하세요 사용자를 위한 <br/>프론트엔드 개발자가 되고자하는 이정석입니다</p>
             <img src="/images/profile_images.png" width={200} height={270} alt="/images/profile_images.png"/>    
            </Profile>
         </AboutWrap>

@@ -198,6 +198,7 @@ const CloneListBox = styled.ul`
       height: 100%;
       width: 85%;
       margin: 0 auto;
+      margin-bottom: 30px;
     }
 
 
@@ -370,7 +371,6 @@ function Skill() {
           <img src={`/images/${e.img}`} />
           <p>{e.Contribution}</p>
           <p>{e.date}</p>
-          <p>{e.type}</p>
         </li>
       ))}
         </CloneListBox>
