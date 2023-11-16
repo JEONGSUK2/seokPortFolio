@@ -14,22 +14,27 @@ const M_Btn = styled.div`
     top: 0;
     right: -100%;
     transition: 0.5s;
+   
     &.active{
         right: 0%;
     }
 `
 
 const Hamburger = styled.div`
+   
  @media screen and (min-width: 768px) {
         display: none;
     }
+
     ul{
         padding: 2%;
         z-index: 300;
         cursor: pointer;
-        position: fixed;
+        position: absolute;
         right: 1%;
+        margin-top: 13px;
         li{
+            
             width: 40px;
             height: 5px;
             background-color: #000;

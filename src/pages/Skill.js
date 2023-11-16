@@ -20,7 +20,7 @@ const SkillPageWrap = styled.div`
 
 const Title = styled.div`
   max-width: 1280px;
-  padding: 2%;
+  padding: 1% 2% 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -48,29 +48,16 @@ const Title = styled.div`
         font-size: 0.75rem;
         display: none;
       }
+      &.active{
+        background-color: ${({$isdark})=> ($isdark === 'light' ? 'black' : 'darkgray')};
+        color: ${({$isdark})=> ($isdark === 'light' ? 'white' : '#fff')}; 
+      }
     }
   }
 `
 const TitleLine = styled.div`
-    &::after {
-    content: "";
-    position: absolute;
-    top: 130px;
-    width: 100%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 2px;  
-    background-color: #121212; 
-  }
-  @media screen and (max-width:768px) {
-      margin-bottom: 60px;
-      position: relative;
-      top: -110px;
-      width: 90%;
-      left: 5%;
-
-  }
-  
+  border: 1px solid #000;  
+  margin-bottom: 45px;
   
 `
 ////////////////컨텐츠 시작
@@ -140,9 +127,6 @@ const SkillImg = styled.div`
           transform: translateY(-1px);
           font-weight: bold;
         }
-        &on{
-          transition: 2s;
-        }
       }
     }
   }
@@ -163,7 +147,7 @@ const SkillImg = styled.div`
 const HashInfo = styled.p`
     font-size: 0.9rem;
     width: 80%;
-    color: ${({$isdark})=> ($isdark === 'light' ? 'red' : 'black')};
+    color: ${({$isdark})=> ($isdark === 'light' ? 'white' : 'black')};
     font-weight: bold;
     
     @media screen and (max-width:768px){
@@ -180,9 +164,7 @@ const OverFlowWrap = styled.div`
   height: 100%;
   flex-basis: 55%;
   background-color: ${({$isdark})=> ($isdark === 'light' ? '#fff' : '	#333333')}; 
-
   `
-
 
 const CloneListBox = styled.ul`
       overflow-y: auto; 
@@ -202,7 +184,6 @@ const CloneListBox = styled.ul`
       margin-bottom: 30px;
     }
 
-
     li{
     border: 1px solid #000;
     flex-basis: 30%;
@@ -221,7 +202,6 @@ const CloneListBox = styled.ul`
        font-size: 0.9rem;
        padding: 2%;
       }
-      
     }
 `
 const M_FilterBtn = styled.div`
@@ -245,18 +225,19 @@ const M_FilterBtn = styled.div`
       display: none;
   }
 `
-
+const Logo = styled.div`
+  padding-bottom: 10px;
+`
 
 
 //  filter: brightness(50%);
 
 
-
-
 function Skill() {
  
   const [selectedTag, setSelectedTag] = useState(null);
-  const [opc, setOpc] = useState(false)
+
+  const [ChangeColor, setChangeColor] = useState(false)
 
   const Array = [
     //클론
@@ -331,19 +312,18 @@ function Skill() {
     <PageLink/>
       <SkillPage $isdark={theme}>
         <SkillPageWrap>
-          <Title>
-          <LogoLink/>
-            <ul>
+          <Title $isdark={theme}>
+          <Logo><LogoLink/></Logo>
+            <ul >
               {
                 FilterBtn.map((e,i)=>{
                   return(
-                    <li key={i} onClick={() => setTotal(e)}>{e}</li>
+                    <li  className={ChangeColor === i ? 'active' : ''} key={i} onClick={() => {setTotal(e); setChangeColor(i)}}>{e}</li>
                   )                               
                 })
               }
           </ul>
-          </Title>
-         
+          </Title>   
           <TitleLine></TitleLine>
         </SkillPageWrap>
         <Contents>
@@ -365,12 +345,12 @@ function Skill() {
             </SkillImg> 
              
         <OverFlowWrap $isdark={theme}>
-        <M_FilterBtn>
-       <ul>
+        <M_FilterBtn >
+       <ul >
               {
                 FilterBtn.map((e,i)=>{
                   return(
-                    <li key={i} onClick={() => setTotal(e)}>{e}</li>
+                    <li className={ChangeColor === false ? 'active' : ''}  key={i} onClick={() => {setTotal(e); setChangeColor(i)}}>{e}</li>
                   )                               
                 })
               }
@@ -378,7 +358,7 @@ function Skill() {
      </M_FilterBtn>
         <CloneListBox> {/* ul  */}
       {
-      filteredItems.map((e, i) => (
+      filteredItems.map((e, i) => ( 
         <li key={i}>
           <img src={`/images/${e.img}`} />
           <p>{e.Contribution}</p>

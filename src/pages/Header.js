@@ -42,7 +42,7 @@ const BackGroundImg = styled.div`
     opacity: 0.9;
     filter: saturate(120%);
     filter : blur(1px); 
-    @media screen and (max-width: 768px) { 
+    @media screen and (max-width: 768px){ 
         height: 600px;
         width: 70%;
         margin-top: 31px;
