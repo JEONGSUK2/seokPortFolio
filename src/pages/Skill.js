@@ -10,13 +10,12 @@ const SkillPage = styled.div`
   width: 100%;
   background-color: ${({$isdark})=> ($isdark === 'light' ? '#fff' : '#353535')}; 
   color: ${({$isdark})=> ($isdark === 'light' ? 'black' : '#fff')};
-  margin-bottom: 10px;
 `
-
 
 const SkillPageWrap = styled.div`
  width: 100%;
 `
+
 
 const Title = styled.div`
   max-width: 1280px;
@@ -63,9 +62,11 @@ const TitleLine = styled.div`
     background-color: #121212; 
   }
   @media screen and (max-width:768px) {
-      margin-bottom: 100px;
+      margin-bottom: 60px;
       position: relative;
       top: -110px;
+      width: 90%;
+      left: 5%;
 
   }
   
@@ -170,6 +171,7 @@ const HashInfo = styled.p`
         display: block;
         margin-top: 10px;
         text-align: center;
+        margin-bottom: 50px;
     }
 `
 
@@ -180,22 +182,7 @@ const OverFlowWrap = styled.div`
   background-color: ${({$isdark})=> ($isdark === 'light' ? '#fff' : '	#333333')}; 
 
   `
-const Mbtn = styled.div`
-    display: none;
-    @media screen and (max-width: 768px) {
-        display: block;
-        ul{
-          display: flex;
-          justify-content: space-around;
-          li{
-            padding: 10px 20px;
-            border: 1px solid #000;
-            margin-bottom: 30px;
-            cursor: pointer;
-          }
-        }
-    }
-`
+
 
 const CloneListBox = styled.ul`
       overflow-y: auto; 
@@ -209,6 +196,8 @@ const CloneListBox = styled.ul`
       flex-direction: column;
       overflow: hidden;
       height: 100%;
+      width: 85%;
+      margin: 0 auto;
     }
 
 
@@ -228,18 +217,36 @@ const CloneListBox = styled.ul`
       p{
        width: 80%;
       }
-      @media screen and (max-width:768px) {
-        height: auto;
+      
+    }
+`
+const M_FilterBtn = styled.div`
+    ul{
+      display: flex;
+      justify-content: center;
+      
+      li{
+      border-radius: 5px;
+      margin-right: 10px;
+      padding: 5px 2px;
+      border: 1px solid #000;
+      flex-basis: 20%;
+      text-align: center;
+      cursor: pointer;
+      margin-bottom: 40px;
       }
     }
-    
+
+  @media screen and (min-width: 768px) {
+      display: none;
+  }
 `
+
+
+
 //  filter: brightness(50%);
 
-const FooterWrap = styled.div`
-  position: relative;
-  top: 96px;
-`
+
 
 
 function Skill() {
@@ -248,66 +255,37 @@ function Skill() {
   const [opc, setOpc] = useState(false)
 
   const Array = [
+    //클론
     {
       img :"/carrot.png",
-      Contribution: "111",
-      date:"",
-      type:"redesign"
+      Contribution: "당근마켓 사이트",
+      date:"제작기간 : 5일",
+      type:"clone"
     },
     {
       img :"/subway.png",
       Contribution: "111",
       date:"",
-      type:"redesign"
+      type:"clone"
     },
+    
+ 
+//리디자인
     {
-      img :"/vercel.png",
-      Contribution: "111",
-      date:"",
-      type:"redesign"
-    },
-    {
-      img: "/mongoDB.png",
-      Contribution: "222",
-      date:"2023..",
-      type:"redesign"
-    },
-    {
-      img: "/react_logo.png",
+      img: "/injective.png",
       Contribution: "222",
       date: "2023..",
-      type: "clone", 
+      type: "redesign", 
     },
+    
+
     {
-      img: "/nextjs.png",
-      Contribution: "222",
-      date: "2023..",
-      type: "clone", 
-    },
-    {
-      img: "/js_logo.png",
-      Contribution: "222",
-      date: "2023..",
-      type: "clone", 
-    },
-    {
-      img: "/redux.png",
+      img: "/greenping.png",
       Contribution: "222",
       date: "2023..",
       type: "project", 
     },
-    {
-      img: "/Firebase_Logo.png",
-      Contribution: "222",
-      date: "2023..",
-      type: "project", 
-    },
-    {
-      img: "/git.png",
-      Contribution: "222",
-      date: "2023..",
-      type: "project", 
-    },
+   
   ]
 
   const HashTag = [
@@ -331,7 +309,7 @@ function Skill() {
 
   const [total, setTotal] = useState("전체");
   const FilterBtn = ["전체", "클론코딩", "리디자인", "프로젝트"];
-  const FilterType =["전체", "redesign", "clone", "project"]
+  const FilterType =["전체", "clone","redesign",  "project"]
   const filteredItems = (total === "전체") ? Array : Array.filter(item => FilterBtn.indexOf(total) === FilterType.indexOf(item.type));
   const theme = useSelector(state => state.dark.mode)
  
@@ -373,12 +351,9 @@ function Skill() {
                 <HashInfo $isdark={theme}>{selectedTag}</HashInfo>
             </SkillImg> 
              
-        
-
         <OverFlowWrap $isdark={theme}>
-          {/*모바일버전 버튼  */}
-          <Mbtn>
-          <ul>
+        <M_FilterBtn>
+       <ul>
               {
                 FilterBtn.map((e,i)=>{
                   return(
@@ -387,8 +362,7 @@ function Skill() {
                 })
               }
           </ul>
-          </Mbtn>
-         {/*모바일버전 버튼  */}
+     </M_FilterBtn>
         <CloneListBox> {/* ul  */}
       {
       filteredItems.map((e, i) => (

@@ -27,7 +27,6 @@ const Title = styled.div`
         width: 100%;
         margin: 0 auto;
         justify-content: center;
-    
     }
 `
 
@@ -36,7 +35,7 @@ const BackGroundImg = styled.div`
     background-position: center;
     background-size: cover;
     width: 50%;
-    height: 643px;
+    height: 642px;
     margin: 0 auto;
     opacity: 0.9;
     filter: saturate(120%);

@@ -38,40 +38,59 @@ const BtnDivWrap = styled.div`
         }
     }
 `
-
-
-
-const M_BtnDiv = styled.div`
-    background-color: black;
-    position: fixed;
-    width: 100%;
+const M_Btn = styled.div`
+    
     height: 100%;
+    /* background-color: gray; */
+    position: fixed;
     z-index: 101;
+    
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
+    &on{
+       
+    }
 `
+
+
 const Hamburger = styled.div`
     ul{
+        padding: 2%;
+        z-index: 300;
         cursor: pointer;
+        position: relative;
+        left: 380px;
         li{
             width: 40px;
             height: 5px;
             background-color: #000;
             border-radius: 5px;
-            margin: 3px; 
+            margin: 3px;
         }
-        &:on{
+    }
+`
 
+const M_BtnDesc = styled.div`
+    ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        li{
+            padding: 20%;
+            font-size: 2rem;
+            font-weight: bold;
         }
     }
 `
 
 
-const M_BtnDesc = styled.div`
-    
-`
 
 function PageLink() {
-      const [isActive, setIsActive] = useState(false)
-    
+  
+    const [isActive, setIsActive] = useState(false)
+ 
       return (
           <>
           <BtnDiv>
@@ -83,23 +102,24 @@ function PageLink() {
                 </ul>
             </BtnDivWrap>
           </BtnDiv>
-          <M_BtnDiv>
-            <Hamburger onClick={()=>{}}>
+
+            <M_Btn  >
+            <Hamburger>
                 <ul>
                     <li></li>
                     <li></li>
                     <li></li>
                 </ul>
             </Hamburger>
+         
             <M_BtnDesc>
-                <ul>
+                {/* <ul>
                     <Link to="/about"><li>about</li></Link>
                     <Link to="/skill"><li>skill&project</li></Link>
                     <Link to="/comment"><li>comment</li></Link>    
-                </ul>
+                </ul> */}
             </M_BtnDesc>
-          </M_BtnDiv>
-
+          </M_Btn>
           </>
         )
       }
