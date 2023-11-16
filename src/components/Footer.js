@@ -27,10 +27,8 @@ const FooterBox = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
- 
-
-  
   `
+  
   const Contact = styled.div`
     display: flex;
     justify-content: space-between;

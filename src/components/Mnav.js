@@ -49,23 +49,25 @@ const M_BtnDesc = styled.div`
 
 function Mnav() {
   return (
-        <M_Btn>
-            <Hamburger>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </Hamburger>
+    <>
+    </>
+//         <M_Btn>
+//             <Hamburger>
+//                 <ul>
+//                     <li></li>
+//                     <li></li>
+//                     <li></li>
+//                 </ul>
+//             </Hamburger>
          
-            <M_BtnDesc>
-                <ul>
-                    {/* <Link to="/about"><li>about</li></Link>
-                    <Link to="/skill"><li>skill&project</li></Link>
-                    <Link to="/comment"><li>comment</li></Link>     */}
-                </ul>
-            </M_BtnDesc>
-          </M_Btn>
+//             <M_BtnDesc>
+//                 <ul>
+//                     {/* <Link to="/about"><li>about</li></Link>
+//                     <Link to="/skill"><li>skill&project</li></Link>
+//                     <Link to="/comment"><li>comment</li></Link>     */}
+//                 </ul>
+//             </M_BtnDesc>
+//           </M_Btn>
   )
 }
 
