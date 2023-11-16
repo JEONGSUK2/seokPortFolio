@@ -19,7 +19,7 @@ import { styled } from 'styled-components'
     text-align: center;
     z-index: 100;
     svg{
-      color: ${({$isdark})=> ($isdark === 'light' ? 'yellow' : '#fff')};
+      color: ${({$isdark})=> ($isdark === 'light' ? 'black' : '#fff')};
     }
     `
 

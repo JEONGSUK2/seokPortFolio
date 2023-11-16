@@ -57,8 +57,7 @@ const Title = styled.div`
 `
 const TitleLine = styled.div`
   border: 1px solid #000;  
-  margin-bottom: 45px;
-  
+  margin-bottom: 18px;
 `
 ////////////////컨텐츠 시작
 
@@ -87,7 +86,6 @@ const SkillImg = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-
   
   @media screen and (max-width: 768px) {
     margin-bottom: 50px;
@@ -147,7 +145,7 @@ const SkillImg = styled.div`
 const HashInfo = styled.p`
     font-size: 0.9rem;
     width: 80%;
-    color: ${({$isdark})=> ($isdark === 'light' ? 'white' : 'black')};
+    color: ${({$isdark})=> ($isdark === 'light' ? 'black' : 'white')};
     font-weight: bold;
     
     @media screen and (max-width:768px){
@@ -175,6 +173,9 @@ const CloneListBox = styled.ul`
       margin-bottom: 15px;
       &::-webkit-scrollbar {
     display: none; }
+  
+
+    
     @media screen and (max-width: 768px) {
       flex-direction: column;
       overflow: hidden;
@@ -191,8 +192,9 @@ const CloneListBox = styled.ul`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 10px;
+    padding: 8px;
     box-shadow: 5px 5px 0px 0px gray;
+    
       img{
         width: 100%;  
         object-fit: cover;
@@ -237,7 +239,7 @@ function Skill() {
  
   const [selectedTag, setSelectedTag] = useState(null);
 
-  const [ChangeColor, setChangeColor] = useState(false)
+  const [ChangeColor, setChangeColor] = useState(0)
 
   const Array = [
     //클론
@@ -306,7 +308,8 @@ function Skill() {
   const FilterType =["전체", "clone","redesign",  "project"]
   const filteredItems = (total === "전체") ? Array : Array.filter(item => FilterBtn.indexOf(total) === FilterType.indexOf(item.type));
   const theme = useSelector(state => state.dark.mode)
- 
+  
+
   return (
     <>
     <PageLink/>
@@ -318,7 +321,7 @@ function Skill() {
               {
                 FilterBtn.map((e,i)=>{
                   return(
-                    <li  className={ChangeColor === i ? 'active' : ''} key={i} onClick={() => {setTotal(e); setChangeColor(i)}}>{e}</li>
+                    <li className={ChangeColor === i ? 'active' : ''} key={i} onClick={() => {setTotal(e); setChangeColor(i)}}>{e}</li>
                   )                               
                 })
               }
@@ -343,7 +346,6 @@ function Skill() {
               </ul>
                 <HashInfo $isdark={theme}>{selectedTag}</HashInfo>
             </SkillImg> 
-             
         <OverFlowWrap $isdark={theme}>
         <M_FilterBtn >
        <ul >
@@ -356,9 +358,12 @@ function Skill() {
               }
           </ul>
      </M_FilterBtn>
+
         <CloneListBox> {/* ul  */}
+        
       {
       filteredItems.map((e, i) => ( 
+        
         <li key={i}>
           <img src={`/images/${e.img}`} />
           <p>{e.Contribution}</p>

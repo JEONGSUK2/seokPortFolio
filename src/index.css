@@ -1,3 +1,58 @@
+
 @font-face {
   font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+.custom-cursor {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  cursor: url('https://img.lovepik.com/free-png/20210927/lovepik-hand-click-icon-png-image_401550838_wh1200.png'), cover;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  background-color: gray; /*사용자 수정*/
+  backface-visibility: hidden;
+  transition: none;
+  mix-blend-mode: color-burn; /*사용자 수정*/
+  pointer-events: none;
+  border-radius: 50%;
+  transform: scale(1);
+}
+ 
+.custom-cursor-icon {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: gray; /*사용자 수정*/
+  transition: all 0.2s ease;
+  transform-origin: 50% 50%;
+}
+.custom_cursor_hover .custom-cursor-icon {
+  transform: scale(1.5);
+}
+ 
+.custom-cursor.custom_cursor_visible {
+  opacity: 1;
+}
+ 
+.custom-cursor.custom_cursor_hidden {
+  opacity: 0;
+}
+ 
+@media (pointer:none), (pointer:coarse) {
+  #custom_cursor,
+  #custom_cursor .custom-cursor-icon {
+      display: none !important;
+      visibility: hidden;
+      opacity: 0;
+  }
+  
+  * {
+      cursor: auto !important;
+  }
 }

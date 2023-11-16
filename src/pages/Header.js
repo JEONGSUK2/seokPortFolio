@@ -7,7 +7,6 @@ import Footer from '../components/Footer'
 import Mnav from '../components/Mnav'
 
 
-
 const HeaderWrap = styled.div`
     width: 100%;
     margin: 0 auto;
@@ -38,7 +37,6 @@ const BackGroundImg = styled.div`
     width: 50%;
     height: 642px;
     margin: 0 auto;
-    margin-bottom: 15px;
     opacity: 0.9;
     filter: saturate(120%);
     filter : blur(1px); 
@@ -50,7 +48,7 @@ const BackGroundImg = styled.div`
 `
 const Emptydiv = styled.div`
     width: 100%;
-    padding: 55.5px;
+    padding: 52px 0px ;
     background-color: ${({$isdark})=> ($isdark === 'light' ? '#fff' : '#333333')}; 
     position: relative;
     bottom: 25px;

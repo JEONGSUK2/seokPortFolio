@@ -62,7 +62,7 @@ const M_BtnDesc = styled.div`
 function Mnav() {
     
     const [isActive, setIsActive] = useState(false)
-    const LinkArray = ["home","about", "skill","comment"]
+    const LinkArray = ["</home>","</about>", "</skill>","</comment>"]
     const LinkPage = ["/","/about" , "/skill","/comment"]
   return (
     <>
