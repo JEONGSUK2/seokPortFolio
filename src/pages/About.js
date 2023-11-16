@@ -134,7 +134,7 @@ const WhatDesc = styled.div`
     flex-direction: column;
     padding: 0 2%;
     margin-top: 30px;
-    margin-bottom: 100px;
+    
      p{
         display: block;
         width: 40%;
@@ -152,6 +152,10 @@ const WhatDesc = styled.div`
       }
       @media screen and (max-width: 768px) {
         font-size: 0.9rem; 
+        
+    }
+    p{
+            margin-bottom: 40px;
     }
     
 `
@@ -161,7 +165,7 @@ function About() {
     
   return (
     <>
-
+   
     <AboutHeader $isdark={theme}>
         <AboutHeaderWrap>
     <div>

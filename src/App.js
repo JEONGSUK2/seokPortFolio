@@ -12,6 +12,8 @@ import Aside from "./components/Aside";
 import PageLink from "./components/PageLink";
 import Footer from "./components/Footer";
 import Comment from "./pages/Comment";
+import Mnav from "./components/Mnav";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 function App() {
@@ -81,9 +83,9 @@ function Dark(){
     <>
     <ThemeProvider theme={theme}> 
     <Aside />
+    <Mnav/>
     <GlobalStyle/>
-    
-    <Routes>
+    <Routes> 
       <Route path="/" element={<Header/>}></Route>
       <Route path="/about" element={<About/>}></Route>
       <Route path="/skill" element={<Skill/>}></Route>

@@ -5,6 +5,7 @@ import PageLink from '../components/PageLink';
 import LogoLink from '../components/LogoLink';
 import { useSelector } from 'react-redux'
 import Footer from '../components/Footer';
+import Mnav from '../components/Mnav';
 
 const SkillPage = styled.div`
   width: 100%;

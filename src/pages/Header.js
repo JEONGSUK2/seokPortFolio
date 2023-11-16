@@ -4,6 +4,7 @@ import LogoLink from '../components/LogoLink'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, NavLink } from 'react-router-dom'
 import Footer from '../components/Footer'
+import Mnav from '../components/Mnav'
 
 
 
@@ -37,6 +38,7 @@ const BackGroundImg = styled.div`
     width: 50%;
     height: 642px;
     margin: 0 auto;
+    margin-bottom: 15px;
     opacity: 0.9;
     filter: saturate(120%);
     filter : blur(1px); 

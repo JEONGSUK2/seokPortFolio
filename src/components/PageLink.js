@@ -86,7 +86,6 @@ const M_BtnDesc = styled.div`
 `
 
 
-
 function PageLink() {
   
     const [isActive, setIsActive] = useState(false)
@@ -96,6 +95,7 @@ function PageLink() {
           <BtnDiv>
             <BtnDivWrap>
                 <ul>
+                    <Link to="/"><li>home</li></Link>
                     <Link to="/about"><li>about</li></Link>
                     <Link to="/skill"><li>skill&project</li></Link>
                     <Link to="/comment"><li>comment</li></Link>    
@@ -103,23 +103,7 @@ function PageLink() {
             </BtnDivWrap>
           </BtnDiv>
 
-            <M_Btn  >
-            <Hamburger>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </Hamburger>
-         
-            <M_BtnDesc>
-                {/* <ul>
-                    <Link to="/about"><li>about</li></Link>
-                    <Link to="/skill"><li>skill&project</li></Link>
-                    <Link to="/comment"><li>comment</li></Link>    
-                </ul> */}
-            </M_BtnDesc>
-          </M_Btn>
+           
           </>
         )
       }

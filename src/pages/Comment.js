@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import Mnav from '../components/Mnav'
 
 const Notpage = styled.div`
     text-align: center;
@@ -22,6 +23,7 @@ const Home = styled.div`
 function Comment() {
   return (
   <>
+    
     <Notpage>페이지만드는중입니다.</Notpage>
     <Link><Home>홈 으로 가기</Home></Link>
   </>
