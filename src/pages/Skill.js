@@ -101,7 +101,6 @@ const SkillImg = styled.div`
   justify-content: space-around;
 
   
-  
   @media screen and (max-width: 768px) {
     margin-bottom: 50px;
   }
@@ -165,7 +164,7 @@ const HashInfo = styled.p`
     width: 80%;
     color: ${({$isdark})=> ($isdark === 'light' ? 'red' : 'black')};
     font-weight: bold;
-    margin-bottom: 20px;
+    
     @media screen and (max-width:768px){
         margin: 0 auto;
         display: block;
@@ -190,6 +189,7 @@ const CloneListBox = styled.ul`
       display: flex;
       flex-wrap: wrap; 
       gap: 10px;
+      margin-bottom: 15px;
       &::-webkit-scrollbar {
     display: none; }
     @media screen and (max-width: 768px) {
@@ -217,6 +217,8 @@ const CloneListBox = styled.ul`
       }
       p{
        width: 80%;
+       font-size: 0.9rem;
+       padding: 2%;
       }
       
     }
@@ -261,12 +263,17 @@ function Skill() {
       img :"/carrot.png",
       Contribution: "당근마켓 사이트",
       date:"제작기간 : 5일",
+      desc:"사용기술: HTML, CSS",
+      desc2:"내용: 당근마켓 메인페이지 클론코딩",
       type:"clone"
+      
     },
     {
       img :"/subway.png",
-      Contribution: "111",
-      date:"",
+      Contribution: "서브웨이 사이트",
+      date:"제작기간 : 7일",
+      desc:"사용 기술: HTML, CSS , JAVASCRIPT",
+      desc2: "내용: 서브웨이 메인페이지 클론코딩",
       type:"clone"
     },
     
@@ -274,16 +281,20 @@ function Skill() {
 //리디자인
     {
       img: "/injective.png",
-      Contribution: "222",
-      date: "2023..",
+      Contribution: "INJECTIVE",
+      date: "제작기간 : 진행중",
+      desc:"사용 기술: HTML, CSS , JAVASCRIPT, JSON",
+      desc2: "내용: 인젝티브 사이트 메인페이지를 좀 더 효율적으로 리디자인",
       type: "redesign", 
     },
     
 
     {
       img: "/greenping.png",
-      Contribution: "222",
-      date: "2023..",
+      Contribution: "GREENPING",
+      date: "제작기간 : 31일",
+      desc:"사용기술 : STYLEED-COMPONENT, REACT, REDUX, FIREBASE ",
+      desc2:"내용: 팀 협업 프로젝트로 캠핑추천을 주제로한 사이트 제작",
       type: "project", 
     },
    
@@ -371,6 +382,8 @@ function Skill() {
           <img src={`/images/${e.img}`} />
           <p>{e.Contribution}</p>
           <p>{e.date}</p>
+          <p>{e.desc2}</p>
+          <p>{e.desc}</p>
         </li>
       ))}
         </CloneListBox>

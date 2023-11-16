@@ -14,7 +14,7 @@ const Notpage = styled.div`
 `
 const Home = styled.div`
   font-size: 30px;
-  margin-bottom: 561px;
+  margin-bottom: 709px;
   text-align: center;
   
 `

@@ -10,7 +10,7 @@ const FooterWrap = styled.div`
   color: #fff;
   position: absolute;
   height: auto;
-  min-height: 10%;
+
   padding-bottom: 0px;
  
 
@@ -28,7 +28,7 @@ const FooterBox = styled.div`
   justify-content: space-between;
   align-items: center;
   `
-  
+
   const Contact = styled.div`
     display: flex;
     justify-content: space-between;
