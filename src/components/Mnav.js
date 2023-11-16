@@ -57,8 +57,8 @@ const M_BtnDesc = styled.div`
 function Mnav() {
     
     const [isActive, setIsActive] = useState(false)
-    const LinkArray = ["about", "skill","comment"]
-    const LinkPage = ["/about" , "/skill","/comment"]
+    const LinkArray = ["home","about", "skill","comment"]
+    const LinkPage = ["/","/about" , "/skill","/comment"]
   return (
     <>
         <Hamburger className={isActive === false ? '' : 'active'} onClick={()=>{setIsActive(!isActive);}}> 

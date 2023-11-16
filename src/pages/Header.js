@@ -45,7 +45,7 @@ const BackGroundImg = styled.div`
     @media screen and (max-width: 768px) { 
         height: 600px;
         width: 70%;
-        margin-top: 46px;
+        margin-top: 31px;
     }
 `
 const Emptydiv = styled.div`
