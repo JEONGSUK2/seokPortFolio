@@ -14,7 +14,7 @@ const HeaderWrap = styled.div`
     margin: 0 auto;
     background-color: ${({$isdark})=> ($isdark === 'light' ? '#fff' : '#353535')}; 
     color: ${({$isdark})=> ($isdark === 'light' ? 'black' : '#fff')};
-    margin-top: 21px
+    
 `
 
 const Title = styled.div`
@@ -56,6 +56,7 @@ const Emptydiv = styled.div`
     position: relative;
     bottom: 25px;
     filter : blur(13px);
+    margin-bottom: 21px;
 `
 const AboutButton = styled.button`
     background-color: white;

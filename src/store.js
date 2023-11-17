@@ -8,10 +8,10 @@ const savedDarkMode = localStorage.getItem(STORAGE_KEY);
 
 // 초기 상태 정의
 const initialState = {
-  mode: savedDarkMode || 'light', // 로컬 스토리지에 저장된 값이 없으면 기본적으로 'light' 모드로 설정
+  mode: savedDarkMode || 'light', // 
 };
 
-// Dark Mode Slice
+
 const darkSlice = createSlice({
   name: "dark",
   initialState,
@@ -24,10 +24,8 @@ const darkSlice = createSlice({
   },
 });
 
-// Export action creator
 export const { toggleTheme } = darkSlice.actions;
 
-// Configure Redux store
 const store = configureStore({
   reducer: {
     dark: darkSlice.reducer,

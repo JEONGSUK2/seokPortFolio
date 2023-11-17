@@ -11,7 +11,6 @@ const FooterWrap = styled.div`
   color: #fff;
   position: absolute;
   height: auto;
-
   @media screen and (max-width:768px) {
     width: 100%;
   }
@@ -24,9 +23,7 @@ const FooterBox = styled.div`
   padding: 11px 0;
 @media screen and (max-width: 768px) {
     flex-direction: column;
-    
 }
-  
   `
 
   const Contact = styled.div`
@@ -101,11 +98,9 @@ const IconDiv = styled.div`
     justify-content: center;
   
   svg{
-    font-size: 40px;
+    font-size: 35px;
     margin-right: 10px;
-    &:nth-child(2){
-      color: yellow;
-    }
+    color: white;
   }
   
   @media screen and (max-width: 768px) {

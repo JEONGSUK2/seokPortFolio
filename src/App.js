@@ -52,6 +52,11 @@ function App() {
   );
 }
 
+
+//Provider는 Redux 스토어를 컴포넌트 트리에 제공하며, useSelector는 Provider가 제공하는 컨텍스트 내에서만 Redux의 상태를 읽을 수 있기 때문에 함께 사용될 수 없습니다.
+
+
+
 function Dark(){
 
   const light = {
@@ -74,8 +79,7 @@ function Dark(){
      
     }
   }
-// userSelector는 
-  
+
   const [themeConfig, setThemeConfig] = useState("light")
   const theme = useSelector(state => state.dark);
 
