@@ -3,7 +3,8 @@
   font-family: 'Noto Sans KR', sans-serif;
 }
 
-
+&::-webkit-scrollbar {
+  display: none; }
 .custom-cursor {
   width: 20px;
   height: 20px;
