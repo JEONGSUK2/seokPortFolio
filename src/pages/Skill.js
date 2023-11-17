@@ -87,33 +87,39 @@ const ContentsWrap = styled.div`
 `
 
 const SkillImg = styled.div`
-  flex-basis: 24%;
+
+  flex-basis: 25%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+  img{
+    width: 90%;
+  }
   
   @media screen and (max-width: 768px) {
     margin-bottom: 50px;
   }
   @media screen and (max-width: 1024px) {
    flex-basis: 40%;
-   
    }
   div{
     font-size: 1.75rem;
     text-align: center;
-    width: 70%;
+    width: 100%;
     @media screen and (max-width: 768px) {
       display: none;
     }
   }
   
   ul{
-    width: 80%;
+    width: 60%;
+    align-items: center;
+    justify-content: center;
     display: flex;
     flex-wrap: wrap; 
     align-items: center;
-    margin-left: 25px;
+    margin-bottom: 20px;
     
     @media screen and (max-width: 768px) {
       flex-direction: row;
@@ -137,8 +143,6 @@ const SkillImg = styled.div`
     }
   }
   img{
-    margin-left: 45px;
-    margin-top: 10px;
     width: 50%;
     object-fit: fill;
     filter: grayscale(50%);
@@ -152,7 +156,8 @@ const SkillImg = styled.div`
   `
 const HashInfo = styled.p`
     font-size: 0.9rem;
-    width: 90%;
+    width: 80%;
+    text-align: center;
     color: ${({$isdark})=> ($isdark === 'light' ? 'black' : 'white')};
     font-weight: bold;
     
@@ -260,8 +265,10 @@ const M_FilterBtn = styled.div`
       text-align: center;
       cursor: pointer;
       margin-bottom: 40px;
-        
-     
+      &.actives{
+        background-color: ${({$isdark})=> ($isdark === 'light' ? '#eee' : 'darkgray')};
+        color: ${({$isdark})=> ($isdark === 'light' ? 'white' : '#fff')}; 
+      }
       }
     }
 
@@ -274,13 +281,11 @@ const Logo = styled.div`
 `
 
 
-//  filter: brightness(50%);
-
-
 function Skill() {
  
   const [selectedTag, setSelectedTag] = useState(null);
   const [ChangeColor, setChangeColor] = useState(0)
+  
   const Array = [
     //클론
     {
@@ -429,7 +434,7 @@ function Skill() {
               {
                 FilterBtn.map((e,i)=>{
                   return(
-                    <li className={ChangeColor === false ? 'active' : ''}  key={i} onClick={() => {setTotal(e); setChangeColor(i)}}>{e}</li>
+                    <li className={ChangeColor === i ? 'actives' : ''}  key={i} onClick={() => {setTotal(e); setChangeColor(i)}}>{e}</li>
                   )                               
                 })
               }
@@ -437,8 +442,6 @@ function Skill() {
      </M_FilterBtn>
         <CloneListBox> 
       {
-
-        
       filteredItems.map((e, i) => {   
         return(
           <React.Fragment key={i}>

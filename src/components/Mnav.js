@@ -17,11 +17,14 @@ const M_Btn = styled.div`
    
     &.active{
         right: 0%;
+        
     }
 `
 
+
+
 const Hamburger = styled.div`
-   
+    
  @media screen and (min-width: 768px) {
         display: none;
     }
@@ -34,7 +37,6 @@ const Hamburger = styled.div`
         right: 1%;
         margin-top: 13px;
         li{
-            
             width: 40px;
             height: 5px;
             background-color: #000;
@@ -42,8 +44,8 @@ const Hamburger = styled.div`
             margin: 3px;
         }
     }
-    
 `
+
 const M_BtnDesc = styled.div`
     ul{
         margin-top: 200px;
@@ -51,6 +53,7 @@ const M_BtnDesc = styled.div`
         flex-direction: column;
         justify-content: center;
         align-items: center;
+       
         li{
             padding: 5%;
             font-size: 2rem;
@@ -58,7 +61,6 @@ const M_BtnDesc = styled.div`
         }
     }
 `
-
 function Mnav() {
     
     const [isActive, setIsActive] = useState(false)
@@ -66,6 +68,7 @@ function Mnav() {
     const LinkPage = ["/","/about" , "/skill","/comment"]
   return (
     <>
+    
         <Hamburger className={isActive === false ? '' : 'active'} onClick={()=>{setIsActive(!isActive);}}> 
                 <ul>
                     <li></li>
@@ -79,16 +82,12 @@ function Mnav() {
                     {
                        LinkArray.map((e,i)=>{
                         return(
-
-                        <li key={i} onClick={()=>{setIsActive(!isActive)}}>
+                        <li key={i} onClick={()=>{setIsActive(!isActive); }}>
                             <NavLink to ={`${LinkPage[i]}`}>{e}</NavLink>
                         </li>
                         )
                        })
                     }
-                    {/* <Link to="/about" onClick={()=>{setIsActive(!isActive)}}><li>about</li></Link>
-                    <Link to="/skill" onClick={()=>{setIsActive(!isActive)}} ><li>skill&project</li></Link>
-                    <Link to="/comment"onClick={()=>{setIsActive(!isActive)}} ><li>comment</li></Link>     */}
                 </ul>
             </M_BtnDesc>
           </M_Btn>
