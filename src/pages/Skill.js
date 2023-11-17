@@ -16,7 +16,6 @@ const SkillPage = styled.div`
 
 const SkillPageWrap = styled.div`
  width: 100%;
-
 `
 
 const Title = styled.div`
@@ -35,7 +34,9 @@ const Title = styled.div`
     @media screen and (max-width: 768px) {
         flex-basis: 70%;
     } 
-   
+    @media screen and (max-width: 1024px) {
+    flex-basis: 50%;
+   }
     li{
       border-radius: 5px;
       margin-right: 10px;
@@ -49,6 +50,7 @@ const Title = styled.div`
         font-size: 0.75rem;
         display: none;
       }
+      
       &.active{
         background-color: ${({$isdark})=> ($isdark === 'light' ? 'black' : 'darkgray')};
         color: ${({$isdark})=> ($isdark === 'light' ? 'white' : '#fff')}; 
@@ -59,6 +61,7 @@ const Title = styled.div`
 const TitleLine = styled.div`
   border: 1px solid #000;  
   margin-bottom: 18px;
+  
 `
 ////////////////컨텐츠 시작
 
@@ -68,6 +71,7 @@ const Contents = styled.div`
   @media screen and (max-width: 768px) {
       padding: 1%;
   }
+  
 `
 
 const ContentsWrap = styled.div`
@@ -91,7 +95,10 @@ const SkillImg = styled.div`
   @media screen and (max-width: 768px) {
     margin-bottom: 50px;
   }
-  
+  @media screen and (max-width: 1024px) {
+   flex-basis: 40%;
+   
+   }
   div{
     font-size: 1.75rem;
     text-align: center;
@@ -381,6 +388,7 @@ function Skill() {
   
   return (
     <>
+    <Mnav/>
     <PageLink/>
       <SkillPage $isdark={theme}>
         <SkillPageWrap>

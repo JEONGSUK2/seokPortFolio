@@ -5,6 +5,7 @@ import LogoLink from '../components/LogoLink'
 import PageLink from '../components/PageLink'
 import Footer from '../components/Footer'
 import Mnav from '../components/Mnav'
+
 const AboutHeader = styled.div`
     width: 100%;
     margin: 0 auto;
@@ -166,7 +167,7 @@ function About() {
     
   return (
     <>
-   
+    <Mnav/>
     <AboutHeader $isdark={theme}>
         <AboutHeaderWrap>
     <div>
@@ -190,7 +191,7 @@ function About() {
                     </p>
                     <p>
                     다른 팀원들과 소통하며 협력하여 새로운 아이디어를 모색하고 사용자들에게 가치 있는 서비스를 제공하고자 합니다.
-                    하지만, 그것에는 정답이 없기 때문에 항상 공부하고 정보를 모색합니다.
+                    하지만, 코드는 끝이없었다..
                     </p>
                    </WhyDesc>  
             </Why>
@@ -199,7 +200,7 @@ function About() {
                 <WhatTitle>WHAT...</WhatTitle>
                 <WhatDesc>
                     <p><span>사용자 중심</span>의 웹사이트를 만들며, 기술을 통해 현실 세계에 긍정적인 영향을 미치는 개발자가 되고자 결심하게 되었습니다.
-                    당근마켓과 injective블록체인 사이트 등 다양한 클론코딩 사이트들을 만들었습니다. 
+                            당근마켓과 injective블록체인 사이트 등 다양한 클론코딩 제작하려 노력합니다. 
                     </p>
                    
      

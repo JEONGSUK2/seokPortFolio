@@ -87,7 +87,7 @@ function Dark(){
     <>
     <ThemeProvider theme={theme}> 
     <Aside />
-    <Mnav/>
+    
     <GlobalStyle/>
     <Routes> 
       <Route path="/" element={<Header/>}></Route>

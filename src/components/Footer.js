@@ -96,7 +96,7 @@ const IconDiv = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-  
+    margin-right: 180px;
   svg{
     font-size: 35px;
     margin-right: 10px;
@@ -106,7 +106,8 @@ const IconDiv = styled.div`
   @media screen and (max-width: 768px) {
       display: flex;
       justify-content: center;
-      margin-left: 180px;
+      margin-top: 10px;
+      margin-right: 0;
       img{
         width: 20%;
         text-align: center;

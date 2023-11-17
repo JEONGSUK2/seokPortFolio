@@ -60,6 +60,8 @@ const Emptydiv = styled.div`
 `
 const AboutButton = styled.button`
     background-color: white;
+    display: flex;
+    flex-direction: column;
     border: none;
     padding:  50px 40px;
     border-radius: 10px;   
@@ -184,15 +186,12 @@ function Header() {
   return (
     <>
     <HeaderWrap $isdark={theme}>
-    
     <Title>
     <LogoLink/>
    <BackGroundImg></BackGroundImg>
    <Emptydiv $isdark={theme}></Emptydiv>
-
    
    <Link to="/about"><AboutButton><span>about <FontAwesomeIcon icon={faMessage}/></span></AboutButton></Link>
- 
    <Link to="/skill"><SkillButton><span>skill <FontAwesomeIcon icon={faTarp}/></span></SkillButton></Link>
    <Link to="/skill"><ContactButton><span>project<FontAwesomeIcon icon={faGear}/></span></ContactButton></Link>
    <Link to="/comment"><ComentButton><span>comment</span><FontAwesomeIcon icon={faComment}/></ComentButton></Link>
