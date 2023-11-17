@@ -99,10 +99,9 @@ const SkillButton = styled.button`
     cursor: pointer;
     svg{
         font-size: 25px;
-        
     }
     span{
-        font-size: 20px;
+        font-size: 1.5rem;
         font-weight: bold;
         color: #AEAEAE;
     }
@@ -133,9 +132,10 @@ const ComentButton = styled.button`
         margin-left: 5px;
     }
     span{
-        font-size: 25px;
+       
         font-weight: bold;
         color: #AEAEAE;
+        font-size: 1.5rem;
     }
     &:hover{
         transform: scale(1.1);
@@ -161,7 +161,7 @@ const ContactButton = styled.button`
     cursor: pointer;
    
     svg{
-        font-size: 30px;
+        font-size: 26px;
         margin-left: 5px;
     }
     span{
