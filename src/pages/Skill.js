@@ -11,10 +11,12 @@ const SkillPage = styled.div`
   width: 100%;
   background-color: ${({$isdark})=> ($isdark === 'light' ? '#fff' : '#353535')}; 
   color: ${({$isdark})=> ($isdark === 'light' ? 'black' : '#fff')};
+  
 `
 
 const SkillPageWrap = styled.div`
  width: 100%;
+ margin-top: 26px;
 `
 
 

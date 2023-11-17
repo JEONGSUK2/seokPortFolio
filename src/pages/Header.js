@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link, NavLink } from 'react-router-dom'
 import Footer from '../components/Footer'
 import Mnav from '../components/Mnav'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {  faComment, faGear, faMessage, faProjectDiagram, faTarp } from '@fortawesome/free-solid-svg-icons'
 
 
 const HeaderWrap = styled.div`
@@ -12,6 +14,7 @@ const HeaderWrap = styled.div`
     margin: 0 auto;
     background-color: ${({$isdark})=> ($isdark === 'light' ? '#fff' : '#353535')}; 
     color: ${({$isdark})=> ($isdark === 'light' ? 'black' : '#fff')};
+    margin-top: 21px
 `
 
 const Title = styled.div`
@@ -94,6 +97,10 @@ const SkillButton = styled.button`
     transform: rotate(5deg);
     transition: 1s;
     cursor: pointer;
+    svg{
+        font-size: 25px;
+        
+    }
     span{
         font-size: 20px;
         font-weight: bold;
@@ -120,6 +127,11 @@ const ComentButton = styled.button`
     transform: rotate(-15deg);
     transition: 1s;
     cursor: pointer;
+    svg{
+        font-size: 25px;
+        color: gray;
+        margin-left: 5px;
+    }
     span{
         font-size: 25px;
         font-weight: bold;
@@ -147,8 +159,13 @@ const ContactButton = styled.button`
     transform: rotate(-10deg);
     transition: 1s;
     cursor: pointer;
+   
+    svg{
+        font-size: 30px;
+        margin-left: 5px;
+    }
     span{
-        font-size: 22px;
+        font-size: 1.5rem;
         font-weight: bold;
         color: #AEAEAE;
     }
@@ -159,20 +176,25 @@ const ContactButton = styled.button`
         right: 10%;
     }
 `   
+
 function Header() {
     const theme = useSelector(state => state.dark.mode)
 
   return (
     <>
     <HeaderWrap $isdark={theme}>
+    
     <Title>
     <LogoLink/>
    <BackGroundImg></BackGroundImg>
    <Emptydiv $isdark={theme}></Emptydiv>
-   <Link to="/about"><AboutButton><span>about</span></AboutButton></Link>
-   <Link to="/skill"><SkillButton><span>skill</span></SkillButton></Link>
-   <Link to="/skill"><ContactButton><span>project</span></ContactButton></Link>
-   <Link to="/comment"><ComentButton><span>comment</span></ComentButton></Link>
+
+   
+   <Link to="/about"><AboutButton><span>about <FontAwesomeIcon icon={faMessage}/></span></AboutButton></Link>
+ 
+   <Link to="/skill"><SkillButton><span>skill <FontAwesomeIcon icon={faTarp}/></span></SkillButton></Link>
+   <Link to="/skill"><ContactButton><span>project<FontAwesomeIcon icon={faGear}/></span></ContactButton></Link>
+   <Link to="/comment"><ComentButton><span>comment</span><FontAwesomeIcon icon={faComment}/></ComentButton></Link>
    </Title>
    </HeaderWrap>
 
