@@ -19,7 +19,6 @@ const SkillPageWrap = styled.div`
 
 `
 
-
 const Title = styled.div`
   max-width: 1280px;
   padding: 1% 2% 0;
@@ -164,7 +163,7 @@ const OverFlowWrap = styled.div`
   height: 100%;
   flex-basis: 55%;
   background-color: ${({$isdark})=> ($isdark === 'light' ? '#fff' : '	#333333')};
-  margin-bottom: 26px; 
+  margin-bottom: 21px; 
   `
 
 const CloneListBox = styled.ul`
@@ -173,7 +172,8 @@ const CloneListBox = styled.ul`
       display: flex;
       flex-wrap: wrap; 
       gap: 10px;
-      margin-bottom: 20px;
+      margin-top: 25px;
+   
       &::-webkit-scrollbar {
     display: none; }
   
@@ -190,14 +190,44 @@ const CloneListBox = styled.ul`
 
     li{
     border: 1px solid #000;
-    flex-basis: 30%;
+    flex-basis: 28%;
     height: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 8px;
-    box-shadow: 5px 5px 0px 0px gray;
-    
+    padding:2%;
+    box-shadow: 1px 1px 2px 0.5px black;
+    position: relative;
+    div{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba( 0, 0, 0, 0.7 );
+        left: 0;
+        top: 0;
+        opacity: 0;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        transition: 0.7s;
+        &:hover{
+          opacity: 1;
+        }
+        button{
+          &:nth-child(1){
+            padding: 1.5rem 2.2rem;
+          }
+          background-color: rgba( 0, 0, 0, 0.9 );
+          cursor: pointer;
+          padding: 1.5rem;
+          border-radius: 1rem;
+          outline: none;
+          margin: 0 auto;
+          span{
+            color: white;
+          }
+        }
+      }
       img{
         width: 100%;  
         object-fit: cover;
@@ -223,6 +253,8 @@ const M_FilterBtn = styled.div`
       text-align: center;
       cursor: pointer;
       margin-bottom: 40px;
+        
+     
       }
     }
 
@@ -241,9 +273,7 @@ const Logo = styled.div`
 function Skill() {
  
   const [selectedTag, setSelectedTag] = useState(null);
-
   const [ChangeColor, setChangeColor] = useState(0)
-
   const Array = [
     //클론
     {
@@ -252,6 +282,7 @@ function Skill() {
       date:"제작기간 : 5일",
       desc:"사용기술: HTML, CSS",
       desc2:"내용: 당근마켓 메인페이지 클론코딩",
+      percent : "기여도: 100%",
       type:"clone"
       
     },
@@ -261,9 +292,10 @@ function Skill() {
       date:"제작기간 : 7일",
       desc:"사용 기술: HTML, CSS , JAVASCRIPT",
       desc2: "내용: 서브웨이 메인페이지 클론코딩",
+      percent : "기여도: 100%",
       type:"clone"
     },
-    
+
  
 //리디자인
     {
@@ -272,6 +304,7 @@ function Skill() {
       date: "제작기간 : 진행중",
       desc:"사용 기술: HTML, CSS , JAVASCRIPT, JSON",
       desc2: "내용: 인젝티브 사이트 메인페이지를 좀 더 효율적으로 리디자인",
+      percent : "기여도: 100%",
       type: "redesign", 
     },
     {
@@ -280,6 +313,7 @@ function Skill() {
       date: "제작기간 : 30일",
       desc:"사용기술 : STYLEED-COMPONENT, REACT, REDUX, FIREBASE ",
       desc2:"내용: 팀 협업 프로젝트로 캠핑추천을 주제로한 사이트 제작",
+      percent : "기여도: 20%",
       type: "project", 
     },
     {
@@ -288,6 +322,7 @@ function Skill() {
       date: "제작기간: 30일",
       desc:"사용기술: REDUX, STYLED-COMPONENT, REACT",
       desc2:"내용: 개인포트폴리오 페이지 제작",
+      percent : "기여도: 100%",
       type:"project",
     },
     {
@@ -296,6 +331,7 @@ function Skill() {
       date: "제작기간: 3일",
       desc:"사용기술: TAILWIND-CSS, REACT",
       desc2:"내용: 퀴즈 문제풀이 페이지 제작",
+      percent : "기여도: 100%",
       type:"project",
     },
     {
@@ -304,10 +340,10 @@ function Skill() {
       date: "제작기간: 7일",
       desc:"사용기술: TAILWIND-CSS, REACT",
       desc2:"내용: 부산 축제 페스티벌 페이지",
+      percent : "기여도: 100%",
       type:"project",
     }
   ]
-
 
   const HashTag = [
     '#SCSS', '#TAILWIND_CSS', '#STYLED_COMPONENTS', 
@@ -334,7 +370,6 @@ function Skill() {
 
   const HashTagDesc = (e) => {
     setSelectedTag(SkillDesc[e]);
-    
     // 여기서 추가적인 작업을 수행하거나 상태를 업데이트할 수 있습니다.
   };
 
@@ -351,7 +386,7 @@ function Skill() {
         <SkillPageWrap>
           <Title $isdark={theme}>
           <Logo><LogoLink/></Logo>
-            <ul >
+            <ul>
               {
                 FilterBtn.map((e,i)=>{
                   return(
@@ -382,7 +417,7 @@ function Skill() {
             </SkillImg> 
         <OverFlowWrap $isdark={theme}>
         <M_FilterBtn >
-       <ul >
+        <ul>
               {
                 FilterBtn.map((e,i)=>{
                   return(
@@ -392,19 +427,30 @@ function Skill() {
               }
           </ul>
      </M_FilterBtn>
-
-        <CloneListBox> {/* ul  */}
+        <CloneListBox> 
       {
-      filteredItems.map((e, i) => ( 
+
         
-        <li key={i}>
+      filteredItems.map((e, i) => {   
+        return(
+          <React.Fragment key={i}>
+          <li >
           <img src={`/images/${e.img}`} />
           <p>{e.Contribution}</p>
           <p>{e.date}</p>
           <p>{e.desc2}</p>
           <p>{e.desc}</p>
+          <p>{e.percent}</p>
+        <div>
+          <button><span>READ ME</span></button>
+          <button><span>SITE ACCESS</span></button>
+        </div>
         </li>
-      ))}
+          </React.Fragment>
+        )
+        
+        })
+      }
         </CloneListBox>
         </OverFlowWrap>
           </ContentsWrap>

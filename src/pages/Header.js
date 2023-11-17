@@ -56,7 +56,7 @@ const Emptydiv = styled.div`
     position: relative;
     bottom: 25px;
     filter : blur(13px);
-    margin-bottom: 21px;
+    margin-bottom: 26px;
 `
 const AboutButton = styled.button`
     background-color: white;

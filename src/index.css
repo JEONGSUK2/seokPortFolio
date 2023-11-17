@@ -5,10 +5,9 @@
 
 
 .custom-cursor {
-  width: 100px;
-  height: 100px;
+  width: 20px;
+  height: 20px;
   position: fixed;
-  cursor: url('https://img.lovepik.com/free-png/20210927/lovepik-hand-click-icon-png-image_401550838_wh1200.png'), cover;
   top: 0;
   left: 0;
   z-index: 999;
