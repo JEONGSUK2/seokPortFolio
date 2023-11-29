@@ -418,7 +418,7 @@ function Skill() {
   const theme = useSelector(state => state.dark.mode)
   
   const SiteLink = ["https://carrotpageclone.vercel.app/","https://subway-eta-eight.vercel.app/","https://injective-redirect.vercel.app/","https://project-greenping.vercel.app/","https://seok-port-folio.vercel.app/",
-    "https://vercel.com/jeongsuk2/react-quiz","https://react-festival-mv4z2cd8q-jeongsuk2.vercel.app/","https://luckydraw-zeta.vercel.app/","https://delivery-tracking-page-m7k81rkzz-jeongsuk2.vercel.app/",
+    "https://react-quiz-liart-eta.vercel.app/","https://react-festival-mv4z2cd8q-jeongsuk2.vercel.app/","https://luckydraw-zeta.vercel.app/","https://delivery-tracking-page-m7k81rkzz-jeongsuk2.vercel.app/",
   ]
   
   const ReadMeLink = ['https://github.com/JEONGSUK2/Clone/blob/main/README.md','https://github.com/JEONGSUK2/subway/blob/main/README.md', 'https://github.com/JEONGSUK2/Injective_redirect/blob/main/README.md',
