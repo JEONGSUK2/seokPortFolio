@@ -1,0 +1,2 @@
+깃허브 주소 https://github.com/JEONGSUK2/seokPortFolio
+버셀 주소 https://seok-port-folio.vercel.app/

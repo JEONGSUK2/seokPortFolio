@@ -6,6 +6,7 @@ import LogoLink from '../components/LogoLink';
 import { useSelector } from 'react-redux'
 import Footer from '../components/Footer';
 import Mnav from '../components/Mnav';
+import { Link, NavLink } from 'react-router-dom';
 
 const SkillPage = styled.div`
   width: 100%;
@@ -71,7 +72,6 @@ const Contents = styled.div`
   @media screen and (max-width: 768px) {
       padding: 1%;
   }
-  
 `
 
 const ContentsWrap = styled.div`
@@ -87,18 +87,20 @@ const ContentsWrap = styled.div`
 `
 
 const SkillImg = styled.div`
-
   flex-basis: 25%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+ 
   img{
     width: 90%;
   }
   
   @media screen and (max-width: 768px) {
     margin-bottom: 50px;
+    justify-content: space-between;
+    
   }
   @media screen and (max-width: 1024px) {
    flex-basis: 40%;
@@ -107,6 +109,7 @@ const SkillImg = styled.div`
     font-size: 1.75rem;
     text-align: center;
     width: 100%;
+    margin: 15px 0;
     @media screen and (max-width: 768px) {
       display: none;
     }
@@ -160,6 +163,9 @@ const HashInfo = styled.p`
     text-align: center;
     color: ${({$isdark})=> ($isdark === 'light' ? 'black' : 'white')};
     font-weight: bold;
+    display: block;
+    flex-basis: 10%;
+ 
     
     @media screen and (max-width:768px){
         margin: 0 auto;
@@ -167,6 +173,7 @@ const HashInfo = styled.p`
         margin-top: 10px;
         text-align: center;
         margin-bottom: 50px;
+        
     }
 `
 
@@ -187,10 +194,10 @@ const CloneListBox = styled.ul`
       margin-top: 25px;
    
       &::-webkit-scrollbar {
-    display: none; }
+    display: none;
+   }
   
 
-    
     @media screen and (max-width: 768px) {
       flex-direction: column;
       overflow: hidden;
@@ -268,7 +275,7 @@ const M_FilterBtn = styled.div`
       &.actives{
         background-color: ${({$isdark})=> ($isdark === 'light' ? '#eee' : 'darkgray')};
         color: ${({$isdark})=> ($isdark === 'light' ? 'white' : '#fff')}; 
-      }
+       }
       }
     }
 
@@ -295,8 +302,9 @@ function Skill() {
       desc:"사용기술: HTML, CSS",
       desc2:"내용: 당근마켓 메인페이지 클론코딩",
       percent : "기여도: 100%",
-      type:"clone"
-      
+      type:"clone",
+      sitelink:"/carrotpageclone.vercel.app",
+      readmelink:"/https://github.com/JEONGSUK2/Clone/blob/main/README.md"
     },
     {
       img :"/subway.png",
@@ -339,7 +347,7 @@ function Skill() {
     },
     {
       img: "/quiz.png",
-      Contribution:"PORTFOLIO",
+      Contribution:"Quiz",
       date: "제작기간: 3일",
       desc:"사용기술: TAILWIND-CSS, REACT",
       desc2:"내용: 퀴즈 문제풀이 페이지 제작",
@@ -349,12 +357,31 @@ function Skill() {
     {
       img: "/festval.png",
       Contribution:"FESTVAL",
-      date: "제작기간: 7일",
+      date: "제작기간: 5일",
       desc:"사용기술: TAILWIND-CSS, REACT",
       desc2:"내용: 부산 축제 페스티벌 페이지",
       percent : "기여도: 100%",
       type:"project",
-    }
+    },
+    {
+      img: "/lucky.png",
+      Contribution:"LuckyDraw",
+      date: "제작기간: 3일",
+      desc:"사용기술: NEXTJS, REACT, API, TAILWIND-CSS",
+      desc2:"내용: 행운의 운세 뽑기",
+      percent : "기여도: 100%",
+      type:"project",
+    },
+    {
+      img: "/delivery.png",
+      Contribution:"Pacel",
+      date: "제작기간: 3일",
+      desc:"사용기술: REACT, API, TAILWIND-CSS, TYPE-SCRIPT",
+      desc2:"내용: 스마트 택배 API를 사용하여 택배조회 페이지 제작",
+      percent : "기여도: 100%",
+      type:"project",
+    },
+   
   ]
 
   const HashTag = [
@@ -382,7 +409,6 @@ function Skill() {
 
   const HashTagDesc = (e) => {
     setSelectedTag(SkillDesc[e]);
-    // 여기서 추가적인 작업을 수행하거나 상태를 업데이트할 수 있습니다.
   };
 
   const [total, setTotal] = useState("전체");
@@ -391,6 +417,15 @@ function Skill() {
   const filteredItems = (total === "전체") ? Array : Array.filter(item => FilterBtn.indexOf(total) === FilterType.indexOf(item.type));
   const theme = useSelector(state => state.dark.mode)
   
+  const SiteLink = ["https://carrotpageclone.vercel.app/","https://subway-eta-eight.vercel.app/","https://injective-redirect.vercel.app/","https://project-greenping.vercel.app/","https://seok-port-folio.vercel.app/",
+    "https://vercel.com/jeongsuk2/react-quiz","https://react-festival-mv4z2cd8q-jeongsuk2.vercel.app/","https://luckydraw-zeta.vercel.app/","https://delivery-tracking-page-m7k81rkzz-jeongsuk2.vercel.app/",
+  ]
+  
+  const ReadMeLink = ['https://github.com/JEONGSUK2/Clone/blob/main/README.md','https://github.com/JEONGSUK2/subway/blob/main/README.md', 'https://github.com/JEONGSUK2/Injective_redirect/blob/main/README.md',
+'https://github.com/kkkkinderjoy/project_greenping','https://github.com/JEONGSUK2/seokPortFolio/blob/main/README.md','https://github.com/JEONGSUK2/ReactQuiz/blob/main/README.md','https://github.com/JEONGSUK2/ReactFestival/blob/main/README.md','https://github.com/JEONGSUK2/Luckydraw']
+
+
+
   return (
     <>
     <Mnav/>
@@ -399,7 +434,7 @@ function Skill() {
         <SkillPageWrap>
           <Title $isdark={theme}>
           <Logo><LogoLink/></Logo>
-            <ul>
+          <ul>
               {
                 FilterBtn.map((e,i)=>{
                   return(
@@ -426,15 +461,15 @@ function Skill() {
                   })
                 } 
               </ul>
-                <HashInfo $isdark={theme}>{selectedTag}</HashInfo>
+                <HashInfo $isdark={theme}><span>{selectedTag}</span></HashInfo>
             </SkillImg> 
         <OverFlowWrap $isdark={theme}>
-        <M_FilterBtn >
-        <ul>
+        <M_FilterBtn>
+          <ul>
               {
                 FilterBtn.map((e,i)=>{
                   return(
-                    <li className={ChangeColor === i ? 'actives' : ''}  key={i} onClick={() => {setTotal(e); setChangeColor(i)}}>{e}</li>
+                    <li className={ChangeColor === i ? 'actives' : ''} key={i} onClick={() => {setTotal(e); setChangeColor(i)}}>{e}</li>
                   )                               
                 })
               }
@@ -445,7 +480,7 @@ function Skill() {
       filteredItems.map((e, i) => {   
         return(
           <React.Fragment key={i}>
-          <li >
+          <li>
           <img src={`/images/${e.img}`} />
           <p>{e.Contribution}</p>
           <p>{e.date}</p>
@@ -453,13 +488,12 @@ function Skill() {
           <p>{e.desc}</p>
           <p>{e.percent}</p>
         <div>
-          <button><span>READ ME</span></button>
-          <button><span>SITE ACCESS</span></button>
+          <button><Link to = {`${SiteLink[i]}`}><span>SITE ACCESS</span></Link></button>
+          <button><Link to = {`${ReadMeLink[i]}`}><span>ReadMe</span></Link></button>
         </div>
         </li>
           </React.Fragment>
         )
-        
         })
       }
         </CloneListBox>

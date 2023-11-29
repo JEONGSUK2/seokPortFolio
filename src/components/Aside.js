@@ -29,6 +29,7 @@ function Aside() {
   const handleToggleTheme = () => {
     dispatch(toggleTheme());
   };
+  
   return (
     <ASide $isdark={theme} onClick={handleToggleTheme}>
         <FontAwesomeIcon icon={ theme === 'light' ? faLightbulb : faLightbulb} size='lg'/>   

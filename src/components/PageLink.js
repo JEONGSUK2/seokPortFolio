@@ -22,7 +22,6 @@ const BtnDivWrap = styled.div`
         display: flex;
         flex-direction: column;
         
-        
         li{
             border-radius: 10px;
             padding: 10px 30px;

@@ -16,7 +16,6 @@ const Logo = styled.div`
     }
 `
 
-
 function LogoLink() {
   return (
     <Logo>

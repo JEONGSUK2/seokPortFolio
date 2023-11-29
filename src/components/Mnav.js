@@ -16,12 +16,9 @@ const M_Btn = styled.div`
     transition: 0.5s;
    
     &.active{
-        right: 0%;
-        
+        right: 0;  
     }
 `
-
-
 
 const Hamburger = styled.div`
     
@@ -42,6 +39,7 @@ const Hamburger = styled.div`
             background-color: #000;
             border-radius: 5px;
             margin: 3px;
+            
         }
     }
 `
@@ -68,9 +66,8 @@ function Mnav() {
     const LinkPage = ["/","/about" , "/skill","/comment"]
   return (
     <>
-    
         <Hamburger className={isActive === false ? '' : 'active'} onClick={()=>{setIsActive(!isActive);}}> 
-                <ul>
+                <ul style={{position: isActive ? 'fixed' : 'absolute'}}>
                     <li></li>
                     <li></li>
                     <li></li>
@@ -82,7 +79,7 @@ function Mnav() {
                     {
                        LinkArray.map((e,i)=>{
                         return(
-                        <li key={i} onClick={()=>{setIsActive(!isActive); }}>
+                        <li key={i} onClick={()=>{setIsActive(!isActive); window.scrollTo(0,0)}}>
                             <NavLink to ={`${LinkPage[i]}`}>{e}</NavLink>
                         </li>
                         )

@@ -1,12 +1,9 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 
-// 로컬 스토리지 키(key)
-const STORAGE_KEY = 'darkMode';
+const STORAGE_KEY = 'darkmode';
 
-// 이전에 저장된 다크 모드 상태 확인
 const savedDarkMode = localStorage.getItem(STORAGE_KEY);
 
-// 초기 상태 정의
 const initialState = {
   mode: savedDarkMode || 'light', // 
 };
