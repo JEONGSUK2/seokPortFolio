@@ -51,5 +51,4 @@ function Dark() {
     </>
   );
 }
-
 export default App;

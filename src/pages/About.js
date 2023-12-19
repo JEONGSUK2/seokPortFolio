@@ -168,21 +168,22 @@ function About() {
     
     const [scrollY, setScrollY] = useState(0);
     const [scrollToggle, setScrollToggle] = useState(false);
-  useEffect(() => {
-    (() => {
-      window.addEventListener('scroll', () => setScrollY(window.pageYOffset));
-      if (scrollY > 100) {
-        setScrollToggle(true);
-      } else if (scrollY < 100) {
-        setScrollToggle(false);
-      }
-    })();
-    return () => {
-      window.removeEventListener('scroll', () =>
-        setScrollY(window.pageYOffset)
-      );
-    };
-  });
+  
+    useEffect(() => {
+      const handleScroll = () => {
+        const scrollPosition = window.scrollY;
+        if (scrollPosition >= 700 && scrollPosition <= 900) {
+          
+        }
+      };
+    
+      window.addEventListener('scroll', handleScroll);
+    
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, []);
+    
 
   return (
     <>
@@ -200,7 +201,7 @@ function About() {
             <img src="/images/profile_images.png" width={200} height={270} alt="/images/profile_images.png"/>    
            </Profile>
         </AboutWrap>
-            <Why>
+            <Why className='' >
                 <BackgroundPeopleImg></BackgroundPeopleImg>
                    <WhyTitle>WHY?</WhyTitle>
                    <WhyDesc>
