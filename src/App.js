@@ -18,19 +18,14 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 
 function AnimatedRoutes() {
-  const location = useLocation();
-
+ 
   return (
-    <TransitionGroup>
-      <CSSTransition key={location.key} classNames="right" timeout={600}>
-        <Routes location={location}>
+        <Routes>
           <Route path="/" element={<Header/>} />
           <Route path="/about" element={<About/>} />
           <Route path="/skill" element={<Skill/>} />
           <Route path="/comment" element={<Comment/>} />
         </Routes>
-      </CSSTransition>
-    </TransitionGroup>
   );
 }
 
@@ -38,9 +33,7 @@ function App() {
   return (
     <Provider store={store}>
       <Dark />
-      
     </Provider>
-    
   );
 }
 
